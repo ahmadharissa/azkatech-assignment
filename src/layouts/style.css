@@ -1,0 +1,12 @@
+.Navstyle {
+  background-color: black;
+}
+.logo-image {
+  width: 10rem;
+}
+@media (max-width: 1000px) {
+  .logo-image {
+    width: 8rem;
+    margin-left: 20px;
+  }
+}

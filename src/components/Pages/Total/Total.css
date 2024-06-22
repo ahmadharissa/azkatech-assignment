@@ -1,0 +1,41 @@
+.chart{
+  width: 50% !important;
+}
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+  }
+  
+  .dashboard {
+    padding: 20px;
+  }
+  
+  .stats-cards {
+    margin-bottom: 20px;
+  }
+  
+  .stat-card {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stat-card .MuiCardContent-root {
+    text-align: center;
+  }
+  
+  .stat-card .MuiTypography-h6 {
+    margin-bottom: 10px;
+  }
+  
+  .stat-card .MuiTypography-h4 {
+    font-size: 2rem;
+  }
+@media only screen and (max-width: 600px) {
+  .chart {
+    width: 100% !important;
+  }
+}
