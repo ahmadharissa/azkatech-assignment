@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FcRefresh } from "react-icons/fc";
+import { BiDetail } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 import "./Country.css";
-
 import Sidebar from "../../common/Sidebar/Sidebar";
-
 import { getCountries } from "../../../Redux/Country/countryAction";
 
 const Country = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { loading, country } = useSelector((state) => state.CountryReducer);
   const [records, setRecords] = useState([]);
@@ -56,6 +57,23 @@ const Country = () => {
       headerName: "Timezones",
       flex: 3,
       sortable: true,
+    },
+    {
+      field: "action",
+      headerName: "Action",
+      flex: 1,
+      width: 100,
+      renderCell: (params) => (
+        <Fragment>
+          <button
+            className="actions"
+            style={{ marginRight: "5px" }}
+            onClick={() => navigate(`/country/${params.row.id}`)}
+          >
+            <BiDetail />
+          </button>
+        </Fragment>
+      ),
     },
   ];
 
